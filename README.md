@@ -123,7 +123,9 @@ var customHtml = '<div style="cursor: pointer; background-color: pink">' +
                  '<i class="glyphicon glyphicon-ok-sign"></i> Testing Custom </div>';
                  
 var customItem = {
-    html: customHtml, 
+    html: customHtml,
+    compileHtml: true,        // Defaults false, for compiling translations.
+    replaceTextByHtml: true,  // Defaults false, for using the html in the link instead of completely replace it.
     enabled: function() {return true}, 
     click: function ($itemScope, $event, value) {
         alert("custom html");

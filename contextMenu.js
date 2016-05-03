@@ -36,16 +36,11 @@ angular.module('ui.bootstrap.contextMenu', [])
 
         if (typeof item[0] === 'string') {
             text = item[0];
-        }
-        else if (typeof item[0] === "function") {
+        } else if (typeof item[0] === "function") {
             text = item[0].call($scope, $scope, event, model);
-        }
-        else if (typeof item.html !== "undefined" && item.replaceTextByHtml)
-        {
+        } else if (typeof item.html !== "undefined" && item.replaceTextByHtml) {
             text = item.compileHtml ? $compile(angular.element(item.html))($scope) : item.html;
-        }
-        else if (typeof item.text !== "undefined")
-        {
+        } else if (typeof item.text !== "undefined") {
             text = item.text;
         }
 
@@ -78,12 +73,9 @@ angular.module('ui.bootstrap.contextMenu', [])
 
         var text = defaultItemText;
         if (typeof item[0] === 'function' || typeof item[0] === 'string' || typeof item.text !== "undefined"
-            || (typeof item.html !== "undefined" && item.replaceTextByHtml))
-        {
+            || (typeof item.html !== "undefined" && item.replaceTextByHtml)) {
             text = processTextItem($scope, item, text, event, model, $promises, nestedMenu, $);
-        }
-        else if (typeof item.html !== "undefined")
-        {
+        } else if (typeof item.html !== "undefined") {
             // leave styling open to dev
             text = item.compileHtml ? $compile(angular.element(item.html))($scope) : item.html;
         }

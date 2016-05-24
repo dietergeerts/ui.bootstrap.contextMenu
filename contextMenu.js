@@ -136,7 +136,7 @@ angular.module('ui.bootstrap.contextMenu', [])
 
             $ul.css({
                 display: 'block',
-                position: 'absolute',
+                position: 'fixed',
                 left: leftCoordinate + 'px',
                 top: topCoordinate + 'px'
             });
@@ -221,7 +221,7 @@ angular.module('ui.bootstrap.contextMenu', [])
         $ul.attr({ 'role': 'menu' });
         $ul.css({
             display: 'block',
-            position: 'absolute',
+            position: 'fixed',
             left: event.pageX + 'px',
             top: event.pageY + 'px',
             "z-index": 10000
@@ -250,7 +250,7 @@ angular.module('ui.bootstrap.contextMenu', [])
         $contextMenu.css({
             width: '100%',
             height: height + 'px',
-            position: 'absolute',
+            position: 'fixed',
             top: 0,
             left: 0,
             zIndex: 9999
